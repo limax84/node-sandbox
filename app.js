@@ -30,7 +30,7 @@ app.use(logger('dev'));
 
 // Setup the JSON and encoded URL parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Setup the cookie parser
 app.use(cookieParser());
