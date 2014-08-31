@@ -22,23 +22,13 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Setup the favicon
+// Setup the app
 app.use(favicon(path.join('.', 'public', 'images', 'favicon', 'favicon.ico')));
-
-// Setup the "morgan" logger for every WS call
 app.use(logger('dev'));
-
-// Setup the JSON and encoded URL parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Setup the cookie parser
 app.use(cookieParser());
-
-// Setup the LESS compiling middleware
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
-
-// Setup the static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Setup and map the routes
