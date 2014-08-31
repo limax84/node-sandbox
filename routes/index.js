@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    res.render('index', { title: 'Express' });
+    res.render('index', {
+        title: 'Express',
+        dns: process.env.OPENSHIFT_APP_DNS || 'localhost'
+    });
 });
 
 module.exports = router;
