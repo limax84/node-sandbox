@@ -5,7 +5,7 @@
   <link rel='stylesheet' href='/stylesheets/style.css'/>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    var socket = io.connect('<%= dns %>:8080');
+    var socket = io.connect('<%= dns %>');
     socket.on('message', function(message) {
       alert('Le serveur a un message pour vous : ' + message);
     })

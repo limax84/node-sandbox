@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
     res.render('index', {
         title: 'Express',
-        dns: process.env.OPENSHIFT_APP_DNS || 'localhost'
+        dns: process.env.OPENSHIFT_APP_DNS || 'localhost:8080'
     });
 });
 
